@@ -1,6 +1,7 @@
 package tk.lexno.blog.dao;
 
 import java.util.List;
+
 import tk.lexno.blog.entity.CategoryInfo;
 import tk.lexno.blog.entity.CategoryInfoExample;
 

@@ -1,6 +1,7 @@
 package tk.lexno.blog.controller;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,9 +61,9 @@ public class CategoryController {
      * @return
      */
     @ApiOperation("增加分类信息")
-    @ApiImplicitParam(name = "name", value = "分类名称", required = true, dataType = "String")
+    @ApiImplicitParam(name = "category", value = "分类信息", required = true, dataType = "tk.lexno.blog.entity.CategoryInfo")
     @PostMapping("/add")
-    public String addCategoryInfo() {
+    public String addCategoryInfo(CategoryInfo category) {
         return null;
     }
 
