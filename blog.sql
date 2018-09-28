@@ -3,15 +3,15 @@
 
  Source Server         : 本地MySQL
  Source Server Type    : MySQL
- Source Server Version : 80012
+ Source Server Version : 50723
  Source Host           : localhost:3306
  Source Schema         : blog
 
  Target Server Type    : MySQL
- Target Server Version : 80012
+ Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 06/09/2018 17:09:19
+ Date: 28/09/2018 15:55:08
 */
 
 SET NAMES utf8mb4;
@@ -74,7 +74,6 @@ CREATE TABLE `tbl_article_info`  (
   `is_delete` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否删除，默认为0为未删除，1为已删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '文章信息表' ROW_FORMAT = Compact;
-
 
 -- ----------------------------
 -- Table structure for tbl_category_info
