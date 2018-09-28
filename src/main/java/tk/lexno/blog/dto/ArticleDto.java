@@ -1,4 +1,8 @@
 package tk.lexno.blog.dto;
 
-public class ArticleDto {
+import tk.lexno.blog.entity.ArticleInfo;
+
+public class ArticleDto extends ArticleInfo {
+    private String content;
+
 }

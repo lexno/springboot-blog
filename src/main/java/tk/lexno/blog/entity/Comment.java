@@ -15,7 +15,7 @@ public class Comment {
 
     private String ip;
 
-    private Boolean isDelete;
+    private Boolean delete;
 
     private Date gmtCreate;
 
@@ -69,12 +69,12 @@ public class Comment {
         this.ip = ip == null ? null : ip.trim();
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean isDelete() {
+        return delete;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setDelete(Boolean delete) {
+        this.delete = delete;
     }
 
     public Date getGmtCreate() {

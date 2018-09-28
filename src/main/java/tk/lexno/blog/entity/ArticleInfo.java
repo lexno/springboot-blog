@@ -21,7 +21,7 @@ public class ArticleInfo {
 
     private Date gmtModified;
 
-    private Boolean isDelete;
+    private Boolean delete;
 
     public Long getId() {
         return id;
@@ -95,11 +95,11 @@ public class ArticleInfo {
         this.gmtModified = gmtModified;
     }
 
-    public Boolean getIsDelete() {
-        return isDelete;
+    public Boolean isDelete() {
+        return delete;
     }
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
+    public void setDelete(Boolean delete) {
+        this.delete = delete;
     }
 }
