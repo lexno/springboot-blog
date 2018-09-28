@@ -7,8 +7,6 @@ public class CategoryInfo {
 
     private String name;
 
-    private Byte number;
-
     private Date gmtCreate;
 
     private Date gmtModified;
@@ -29,14 +27,6 @@ public class CategoryInfo {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public Byte getNumber() {
-        return number;
-    }
-
-    public void setNumber(Byte number) {
-        this.number = number;
     }
 
     public Date getGmtCreate() {

@@ -5,11 +5,9 @@ import java.util.Date;
 public class Comment {
     private Long id;
 
+    private Long articleId;
+
     private String content;
-
-    private Date gmtCreate;
-
-    private Date gmtModified;
 
     private String email;
 
@@ -19,6 +17,10 @@ public class Comment {
 
     private Boolean isDelete;
 
+    private Date gmtCreate;
+
+    private Date gmtModified;
+
     public Long getId() {
         return id;
     }
@@ -27,28 +29,20 @@ public class Comment {
         this.id = id;
     }
 
+    public Long getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Long articleId) {
+        this.articleId = articleId;
+    }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
     }
 
     public String getEmail() {
@@ -81,5 +75,21 @@ public class Comment {
 
     public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
     }
 }

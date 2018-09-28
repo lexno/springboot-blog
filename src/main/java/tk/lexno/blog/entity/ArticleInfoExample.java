@@ -165,6 +165,66 @@ public class ArticleInfoExample {
             return (Criteria) this;
         }
 
+        public Criteria andCategoryIdIsNull() {
+            addCriterion("category_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdIsNotNull() {
+            addCriterion("category_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdEqualTo(Long value) {
+            addCriterion("category_id =", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotEqualTo(Long value) {
+            addCriterion("category_id <>", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdGreaterThan(Long value) {
+            addCriterion("category_id >", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("category_id >=", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdLessThan(Long value) {
+            addCriterion("category_id <", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdLessThanOrEqualTo(Long value) {
+            addCriterion("category_id <=", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdIn(List<Long> values) {
+            addCriterion("category_id in", values, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotIn(List<Long> values) {
+            addCriterion("category_id not in", values, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdBetween(Long value1, Long value2) {
+            addCriterion("category_id between", value1, value2, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotBetween(Long value1, Long value2) {
+            addCriterion("category_id not between", value1, value2, "categoryId");
+            return (Criteria) this;
+        }
+
         public Criteria andTitleIsNull() {
             addCriterion("title is null");
             return (Criteria) this;
@@ -232,6 +292,76 @@ public class ArticleInfoExample {
 
         public Criteria andTitleNotBetween(String value1, String value2) {
             addCriterion("title not between", value1, value2, "title");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlIsNull() {
+            addCriterion("picture_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlIsNotNull() {
+            addCriterion("picture_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlEqualTo(String value) {
+            addCriterion("picture_url =", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlNotEqualTo(String value) {
+            addCriterion("picture_url <>", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlGreaterThan(String value) {
+            addCriterion("picture_url >", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("picture_url >=", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlLessThan(String value) {
+            addCriterion("picture_url <", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlLessThanOrEqualTo(String value) {
+            addCriterion("picture_url <=", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlLike(String value) {
+            addCriterion("picture_url like", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlNotLike(String value) {
+            addCriterion("picture_url not like", value, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlIn(List<String> values) {
+            addCriterion("picture_url in", values, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlNotIn(List<String> values) {
+            addCriterion("picture_url not in", values, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlBetween(String value1, String value2) {
+            addCriterion("picture_url between", value1, value2, "pictureUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andPictureUrlNotBetween(String value1, String value2) {
+            addCriterion("picture_url not between", value1, value2, "pictureUrl");
             return (Criteria) this;
         }
 

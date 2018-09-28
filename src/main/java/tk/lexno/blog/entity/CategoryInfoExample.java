@@ -235,66 +235,6 @@ public class CategoryInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andNumberIsNull() {
-            addCriterion("number is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberIsNotNull() {
-            addCriterion("number is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberEqualTo(Byte value) {
-            addCriterion("number =", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotEqualTo(Byte value) {
-            addCriterion("number <>", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberGreaterThan(Byte value) {
-            addCriterion("number >", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberGreaterThanOrEqualTo(Byte value) {
-            addCriterion("number >=", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberLessThan(Byte value) {
-            addCriterion("number <", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberLessThanOrEqualTo(Byte value) {
-            addCriterion("number <=", value, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberIn(List<Byte> values) {
-            addCriterion("number in", values, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotIn(List<Byte> values) {
-            addCriterion("number not in", values, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberBetween(Byte value1, Byte value2) {
-            addCriterion("number between", value1, value2, "number");
-            return (Criteria) this;
-        }
-
-        public Criteria andNumberNotBetween(Byte value1, Byte value2) {
-            addCriterion("number not between", value1, value2, "number");
-            return (Criteria) this;
-        }
-
         public Criteria andGmtCreateIsNull() {
             addCriterion("gmt_create is null");
             return (Criteria) this;

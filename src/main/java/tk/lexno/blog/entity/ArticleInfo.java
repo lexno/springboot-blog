@@ -5,7 +5,11 @@ import java.util.Date;
 public class ArticleInfo {
     private Long id;
 
+    private Long categoryId;
+
     private String title;
+
+    private String pictureUrl;
 
     private String summary;
 
@@ -27,12 +31,28 @@ public class ArticleInfo {
         this.id = id;
     }
 
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl == null ? null : pictureUrl.trim();
     }
 
     public String getSummary() {
