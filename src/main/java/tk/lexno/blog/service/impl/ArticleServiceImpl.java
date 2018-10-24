@@ -27,21 +27,26 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public void updateArticleContent(ArticleContent content) {
-
+        contentMapper.updateByPrimaryKeySelective(content);
     }
 
     @Override
     public void updateArticleCategory(Long articleId, Long categoryId) {
-
+        ArticleInfo info = new ArticleInfo();
+        info.setCategoryId(categoryId);
+        info.setId(articleId);
+        infoMapper.updateByPrimaryKeySelective(info);
     }
 
     @Override
     public void updateArticle(ArticleDto articleDto) {
+        infoMapper.updateByPrimaryKeySelective(articleDto);
 
     }
 
     @Override
     public ArticleDto getOneById(Long id) {
+
         return null;
     }
 

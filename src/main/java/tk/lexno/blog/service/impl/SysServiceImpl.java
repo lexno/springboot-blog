@@ -1,6 +1,5 @@
 package tk.lexno.blog.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.lexno.blog.dao.SysLogMapper;
 import tk.lexno.blog.dao.SysViewMapper;
