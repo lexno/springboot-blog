@@ -40,3 +40,9 @@ spring:
 server:
   tomcat:
     uri-encoding: UTF-8
+
+tk:
+  lexno:
+    blog:
+      name: test
+

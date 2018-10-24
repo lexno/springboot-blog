@@ -20,7 +20,7 @@ public interface ArticleService {
     void updateArticleContent(ArticleContent content);
 
     /**
-     * 跟新文章分类
+     * 更新文章分类
      * @param articleId 文章id
      * @param categoryId 分类id
      */
@@ -50,4 +50,16 @@ public interface ArticleService {
      * @return 文章列表
      */
     List<ArticleInfo> findByCategoryId(Long id);
+
+    /**
+     * 根据id删除文章
+     * @param id 文章id
+     */
+    void deleteArticleById(Long id);
+
+    /**
+     * 查找最新文章
+     * @return 最新添加的文章
+     */
+    List<ArticleInfo> listLastest();
 }
