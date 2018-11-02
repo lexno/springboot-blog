@@ -24,4 +24,6 @@ public interface ArticleContentMapper {
     int updateByPrimaryKey(ArticleContent record);
 
     ArticleContent selectByArticleId(Long id);
+
+    int updateContentByArticleId(ArticleContent content);
 }

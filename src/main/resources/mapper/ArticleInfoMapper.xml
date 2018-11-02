@@ -13,6 +13,20 @@
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     <result column="is_delete" jdbcType="BIT" property="isDelete" />
   </resultMap>
+
+  <resultMap id="ArticleDto" type="tk.lexno.blog.dto.ArticleDto">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="category_id" jdbcType="BIGINT" property="categoryId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="is_top" jdbcType="BIT" property="isTop" />
+    <result column="traffic" jdbcType="INTEGER" property="traffic" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -188,4 +202,18 @@
       is_delete = #{isDelete,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectArticleDtoById" parameterType="java.lang.Long" resultMap="ArticleDto">
+    select
+    info.*,content.content
+    from tbl_article_info info
+    inner join `tbl_article_content` content
+    on content.article_id = info.id
+    where info.id = #{id,jdbcType=BIGINT}
+  </select>
+
+    <select id="selectLastest" resultMap="BaseResultMap">
+    select *
+    from tbl_article_info
+    order by gmt_create desc
+  </select>
 </mapper>

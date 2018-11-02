@@ -1,6 +1,8 @@
 package tk.lexno.blog.dao;
 
 import java.util.List;
+
+import tk.lexno.blog.dto.ArticleDto;
 import tk.lexno.blog.entity.ArticleInfo;
 import tk.lexno.blog.entity.ArticleInfoExample;
 
@@ -18,4 +20,8 @@ public interface ArticleInfoMapper {
     int updateByPrimaryKeySelective(ArticleInfo record);
 
     int updateByPrimaryKey(ArticleInfo record);
+
+    ArticleDto selectArticleDtoById(Long id);
+
+    List<ArticleInfo> selectLastest();
 }
