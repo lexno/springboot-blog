@@ -40,4 +40,12 @@ public class CommentServiceImpl implements CommentService {
         criteria.andArticleIdEqualTo(id);
         return commentMapper.selectByExample(example);
     }
+
+    @Override
+    public List<Comment> listAllComments() {
+        CommentExample example = new CommentExample();
+        CommentExample.Criteria criteria = example.createCriteria();
+        criteria.andDeleteEqualTo(Boolean.FALSE);
+        return commentMapper.selectByExample(example);
+    }
 }

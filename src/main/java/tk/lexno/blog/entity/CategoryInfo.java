@@ -13,6 +13,8 @@ public class CategoryInfo {
 
     private Boolean delete;
 
+    private Long number;
+
     public Long getId() {
         return id;
     }
@@ -51,5 +53,13 @@ public class CategoryInfo {
 
     public void setDelete(Boolean delete) {
         this.delete = delete;
+    }
+
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
     }
 }

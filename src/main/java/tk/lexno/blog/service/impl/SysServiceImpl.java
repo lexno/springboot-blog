@@ -30,22 +30,22 @@ public class SysServiceImpl implements SysService {
     }
 
     @Override
-    public int getLogCount() {
-        return 0;
+    public Long getLogCount() {
+        return sysLogMapper.selectAllLogCount();
     }
 
     @Override
-    public int getViewCount() {
-        return 0;
+    public Long getViewCount() {
+        return sysViewMapper.selectAllViewCount();
     }
 
     @Override
     public List<SysLog> listAllLog() {
-        return null;
+        return sysLogMapper.selectAllLog();
     }
 
     @Override
     public List<SysView> listAllView() {
-        return null;
+        return sysViewMapper.selectAllView();
     }
 }

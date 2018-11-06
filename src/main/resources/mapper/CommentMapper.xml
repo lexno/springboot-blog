@@ -8,7 +8,7 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="ip" jdbcType="VARCHAR" property="ip" />
-    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
   </resultMap>
@@ -74,7 +74,7 @@
       name, ip, is_delete, gmt_create, 
       gmt_modified)
     values (#{articleId,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{isDelete,jdbcType=BIT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{name,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{delete,jdbcType=BIT}, #{gmtCreate,jdbcType=TIMESTAMP}, 
       #{gmtModified,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="tk.lexno.blog.entity.Comment" useGeneratedKeys="true">
@@ -95,7 +95,7 @@
       <if test="ip != null">
         ip,
       </if>
-      <if test="isDelete != null">
+      <if test="delete != null">
         is_delete,
       </if>
       <if test="gmtCreate != null">
@@ -121,8 +121,8 @@
       <if test="ip != null">
         #{ip,jdbcType=VARCHAR},
       </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        #{delete,jdbcType=BIT},
       </if>
       <if test="gmtCreate != null">
         #{gmtCreate,jdbcType=TIMESTAMP},
@@ -150,8 +150,8 @@
       <if test="ip != null">
         ip = #{ip,jdbcType=VARCHAR},
       </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        is_delete = #{delete,jdbcType=BIT},
       </if>
       <if test="gmtCreate != null">
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
@@ -169,7 +169,7 @@
       email = #{email,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       ip = #{ip,jdbcType=VARCHAR},
-      is_delete = #{isDelete,jdbcType=BIT},
+      is_delete = #{delete,jdbcType=BIT},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
@@ -178,7 +178,7 @@
   <update id="deleteByArticleId" parameterType="tk.lexno.blog.entity.Comment">
     update tbl_comment
     set
-      is_delete = #{isDelete,jdbcType=BIT}
+      is_delete = #{delete,jdbcType=BIT}
     where article_id = #{articleId,jdbcType=BIGINT}
   </update>
 </mapper>

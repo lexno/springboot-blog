@@ -13,7 +13,7 @@ public class ArticleInfo {
 
     private String summary;
 
-    private Boolean isTop;
+    private Boolean top;
 
     private Integer traffic;
 
@@ -63,12 +63,12 @@ public class ArticleInfo {
         this.summary = summary == null ? null : summary.trim();
     }
 
-    public Boolean getIsTop() {
-        return isTop;
+    public Boolean isTop() {
+        return top;
     }
 
-    public void setIsTop(Boolean isTop) {
-        this.isTop = isTop;
+    public void setTop(Boolean isTop) {
+        this.top = isTop;
     }
 
     public Integer getTraffic() {

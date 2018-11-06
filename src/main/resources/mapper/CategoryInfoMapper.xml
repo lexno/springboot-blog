@@ -6,7 +6,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +69,7 @@
     insert into tbl_category_info (name, gmt_create, gmt_modified, 
       is_delete)
     values (#{name,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
-      #{isDelete,jdbcType=BIT})
+      #{delete,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="tk.lexno.blog.entity.CategoryInfo" useGeneratedKeys="true">
     insert into tbl_category_info
@@ -83,7 +83,7 @@
       <if test="gmtModified != null">
         gmt_modified,
       </if>
-      <if test="isDelete != null">
+      <if test="delete != null">
         is_delete,
       </if>
     </trim>
@@ -97,8 +97,8 @@
       <if test="gmtModified != null">
         #{gmtModified,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        #{delete,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -114,8 +114,8 @@
       <if test="gmtModified != null">
         gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        is_delete = #{delete,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -125,7 +125,7 @@
     set name = #{name,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      is_delete = #{isDelete,jdbcType=BIT}
+      is_delete = #{delete,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -18,4 +18,8 @@ public interface SysViewMapper {
     int updateByPrimaryKeySelective(SysView record);
 
     int updateByPrimaryKey(SysView record);
+
+    List<SysView> selectAllView();
+
+    Long selectAllViewCount();
 }

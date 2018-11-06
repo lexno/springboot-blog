@@ -23,9 +23,9 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public void addArticle(ArticleDto articleDto) {
-        int articleId = infoMapper.insertSelective(articleDto);
+        infoMapper.insertSelective(articleDto);
         ArticleContent content = new ArticleContent();
-        content.setArticleId((long) articleId);
+        content.setArticleId(articleDto.getId());
         content.setContent(articleDto.getContent());
         contentMapper.insertSelective(content);
     }
@@ -54,7 +54,6 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public ArticleDto getOneById(Long id) {
-
         return infoMapper.selectArticleDtoById(id);
     }
 

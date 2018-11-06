@@ -117,4 +117,10 @@
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectAllView" resultMap="BaseResultMap">
+    select * from sys_view
+  </select>
+  <select id="selectAllViewCount" resultType="long">
+    select count(*) from sys_view
+  </select>
 </mapper>

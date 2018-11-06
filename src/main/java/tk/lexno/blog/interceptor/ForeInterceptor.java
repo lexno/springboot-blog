@@ -31,8 +31,6 @@ public class ForeInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
                     @Nullable ModelAndView modelAndView) throws Exception {
-        HandlerMethod handlerMethod = (HandlerMethod) handler;
-        Method method = handlerMethod.getMethod();
 
         // 获取访问者的IP地址
         String ip = request.getRemoteAddr();
@@ -46,7 +44,11 @@ public class ForeInterceptor implements HandlerInterceptor {
         sysLog.setIp(ip);
         sysLog.setOperateBy(BrowserUtils.getOsAndBrowserInfo(request));
         sysLog.setOperateUrl(url);
-        sysLog.setRemark(method.getName());
+
+        if(handler instanceof  HandlerMethod) {
+            Method method = ((HandlerMethod) handler).getMethod();
+            sysLog.setRemark(method.getName());
+        }
 
         sysService.addLog(sysLog);
         // 增加访问量

@@ -7,11 +7,11 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
     <result column="summary" jdbcType="VARCHAR" property="summary" />
-    <result column="is_top" jdbcType="BIT" property="isTop" />
+    <result column="is_top" jdbcType="BIT" property="top" />
     <result column="traffic" jdbcType="INTEGER" property="traffic" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
   </resultMap>
 
   <resultMap id="ArticleDto" type="tk.lexno.blog.dto.ArticleDto">
@@ -20,11 +20,11 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
     <result column="summary" jdbcType="VARCHAR" property="summary" />
-    <result column="is_top" jdbcType="BIT" property="isTop" />
+    <result column="is_top" jdbcType="BIT" property="top" />
     <result column="traffic" jdbcType="INTEGER" property="traffic" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="is_delete" jdbcType="BIT" property="delete" />
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -91,8 +91,8 @@
       gmt_create, gmt_modified, is_delete
       )
     values (#{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{pictureUrl,jdbcType=VARCHAR}, 
-      #{summary,jdbcType=VARCHAR}, #{isTop,jdbcType=BIT}, #{traffic,jdbcType=INTEGER}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=BIT}
+      #{summary,jdbcType=VARCHAR}, #{top,jdbcType=BIT}, #{traffic,jdbcType=INTEGER}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{delete,jdbcType=BIT}
       )
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="tk.lexno.blog.entity.ArticleInfo" useGeneratedKeys="true">
@@ -110,7 +110,7 @@
       <if test="summary != null">
         summary,
       </if>
-      <if test="isTop != null">
+      <if test="top != null">
         is_top,
       </if>
       <if test="traffic != null">
@@ -122,7 +122,7 @@
       <if test="gmtModified != null">
         gmt_modified,
       </if>
-      <if test="isDelete != null">
+      <if test="delete != null">
         is_delete,
       </if>
     </trim>
@@ -139,8 +139,8 @@
       <if test="summary != null">
         #{summary,jdbcType=VARCHAR},
       </if>
-      <if test="isTop != null">
-        #{isTop,jdbcType=BIT},
+      <if test="top != null">
+        #{top,jdbcType=BIT},
       </if>
       <if test="traffic != null">
         #{traffic,jdbcType=INTEGER},
@@ -151,8 +151,8 @@
       <if test="gmtModified != null">
         #{gmtModified,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        #{delete,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -171,8 +171,8 @@
       <if test="summary != null">
         summary = #{summary,jdbcType=VARCHAR},
       </if>
-      <if test="isTop != null">
-        is_top = #{isTop,jdbcType=BIT},
+      <if test="top != null">
+        is_top = #{top,jdbcType=BIT},
       </if>
       <if test="traffic != null">
         traffic = #{traffic,jdbcType=INTEGER},
@@ -183,8 +183,8 @@
       <if test="gmtModified != null">
         gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
       </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=BIT},
+      <if test="delete != null">
+        is_delete = #{delete,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -195,11 +195,11 @@
       title = #{title,jdbcType=VARCHAR},
       picture_url = #{pictureUrl,jdbcType=VARCHAR},
       summary = #{summary,jdbcType=VARCHAR},
-      is_top = #{isTop,jdbcType=BIT},
+      is_top = #{top,jdbcType=BIT},
       traffic = #{traffic,jdbcType=INTEGER},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
-      is_delete = #{isDelete,jdbcType=BIT}
+      is_delete = #{delete,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectArticleDtoById" parameterType="java.lang.Long" resultMap="ArticleDto">

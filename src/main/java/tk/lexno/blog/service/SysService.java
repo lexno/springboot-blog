@@ -23,13 +23,13 @@ public interface SysService {
      * 获得日志的总数量
      * @return 总数量
      */
-    int getLogCount();
+    Long getLogCount();
 
     /**
      * 获得总访问量
      * @return 总访问量
      */
-    int getViewCount();
+    Long getViewCount();
 
     /**
      * 返回所有日志

@@ -435,63 +435,13 @@ public class ArticleInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsTopIsNull() {
-            addCriterion("is_top is null");
+        public Criteria andTopEqualTo(Boolean value) {
+            addCriterion("is_top =", value, "top");
             return (Criteria) this;
         }
 
-        public Criteria andIsTopIsNotNull() {
-            addCriterion("is_top is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopEqualTo(Boolean value) {
-            addCriterion("is_top =", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopNotEqualTo(Boolean value) {
-            addCriterion("is_top <>", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopGreaterThan(Boolean value) {
-            addCriterion("is_top >", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("is_top >=", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopLessThan(Boolean value) {
-            addCriterion("is_top <", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopLessThanOrEqualTo(Boolean value) {
-            addCriterion("is_top <=", value, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopIn(List<Boolean> values) {
-            addCriterion("is_top in", values, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopNotIn(List<Boolean> values) {
-            addCriterion("is_top not in", values, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_top between", value1, value2, "isTop");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsTopNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("is_top not between", value1, value2, "isTop");
+        public Criteria andTopNotEqualTo(Boolean value) {
+            addCriterion("is_top <>", value, "top");
             return (Criteria) this;
         }
 
